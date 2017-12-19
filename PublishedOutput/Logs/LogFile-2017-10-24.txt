@@ -1,0 +1,28 @@
+--------------------------------------------
+-- RNAS Environment Testing Tool v1.0
+-- Test Date: 2017-10-24 2:31:36 PM
+--------------------------------------------
+
+
+---------------- Ping Tests ----------------
+
+Pass, CGI Applications Hub, 95ms
+Pass, Microsoft, 76ms
+Pass, WebTS, 108ms
+Pass, JIRA, 63ms
+Fail, GOA SSPR, TimedOut
+Fail, Checklist, TimedOut
+Pass, Vector, 145ms
+
+---------------- Web Tests ----------------
+
+Pass, CGI Applications Hub, 200
+Pass, Microsoft, 200
+Pass, WebTS, The remote server returned an error: (401) Unauthorized.
+Pass, JIRA, 200
+Pass, GOA SSPR, 200
+Pass, Checklist, 200
+Pass, Vector, 200
+
+
+----------------- Test Complete -----------------
