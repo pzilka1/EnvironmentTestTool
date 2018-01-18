@@ -7,7 +7,7 @@ using System.Net.NetworkInformation;
 
 using Microsoft.Extensions.Configuration;
 
-namespace RNASTestingTool
+namespace EnvironmentTestTool
 {
     class Program
     {
@@ -25,8 +25,8 @@ namespace RNASTestingTool
             GlobalSettings = Configuration.GetSection("Settings").Get<Settings>();
 
             //start all tests
-            Task<List<LogOutput>> pingTest = RNASPing();
-            Task<List<LogOutput>> webTest = RNASWebResponse();
+            Task<List<LogOutput>> pingTest = TestPing();
+            Task<List<LogOutput>> webTest = TestWebResponse();
 
             string filePath = WriteLogHeader();
 
@@ -46,7 +46,7 @@ namespace RNASTestingTool
         /// Pings list of websites for a response
         /// </summary>
         /// <returns></returns>
-        public static async Task<List<LogOutput>> RNASPing()
+        public static async Task<List<LogOutput>> TestPing()
         {
             List<Task<PingReply>> requests = new List<Task<PingReply>>();
 
@@ -102,7 +102,7 @@ namespace RNASTestingTool
         /// Checks to see if web sites will give a valid response
         /// </summary>
         /// <returns></returns>
-        public static async Task<List<LogOutput>> RNASWebResponse()
+        public static async Task<List<LogOutput>> TestWebResponse()
         {
             List<Task<string>> webrequests = new List<Task<string>>();
 
@@ -209,7 +209,7 @@ namespace RNASTestingTool
                 filePath = fs.Name;
 
                 writer.WriteLine("--------------------------------------------");
-                writer.WriteLine($"-- RNAS Environment Testing Tool {GlobalSettings.Version}");
+                writer.WriteLine($"-- Environment Testing Tool {GlobalSettings.Version}");
                 writer.WriteLine($"-- Test Date: {DateTime.Now}");
                 writer.WriteLine("--------------------------------------------");
                 writer.WriteLine();

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace RNASTestingTool
+namespace EnvironmentTestTool
 {
     /// <summary>
     /// List global test tool settings
